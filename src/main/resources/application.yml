@@ -1,10 +1,31 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/hophop_db
+    url: jdbc:postgresql://localhost:5432/auto_mart
     username: postgres
     password: 1234
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "hasanov.e95@gmail.com"
+    password: "wjbx mcwp gfaw xenf"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+#change the secret key
+app:
+  security:
+    jwt:
+    secretKey: dff14e1c1f9f4bd13768aef725edac9f325ff8917463e0acb324b3f332d3fa67da873cced2e011f71078ad28f4580cbd436246d9e72cf5aca1b3d45903003efb
+    access-token:
+      expiration: 86400000 # 24 hour
+    refresh-token:
+      expiration: 3600000 # 1 hour
